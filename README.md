@@ -20,7 +20,7 @@ brew cask install iterm2
 ### Install git (and configure)
 
 ```bash
-homebrew install git
+brew install git
 git config --global user.name "<name as it appears on GitHub>"
 git config --global user.email "<email as it appears on GitHub>"
 ```
@@ -44,6 +44,7 @@ cd mac-setup
 ```bash
 brew install mas
 mas signin --dialog <Apple ID email>
+# ^ Broken in 10.13+. Will say to sign in to App Store the standard way
 ```
 
 ## Setup
@@ -54,11 +55,14 @@ mas signin --dialog <Apple ID email>
 brew bundle install
 ```
 
-There might be some need to enter the sudo password at some point
+**NB:** There might be some need to enter the sudo password at some point
+**NB:** Some installs might require some approvals in `System Preferences → Security & Privacy → General`. They will fail at first. Approve them, then rerun `brew bundle install`
 
 ### Symlink `dotfiles`
 
 ```bash
+# make_links.sh uses gnu ln which is not yet in the PATH
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 # Creates a ~/.<item> symlink to every <item> in _current
 ./make_links.sh # re-run with --yes to confirm
 ```
