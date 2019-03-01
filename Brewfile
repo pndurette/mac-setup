@@ -60,12 +60,18 @@ cask 'vagrant'
 cask 'virtualbox'
 
 # Dev/Python
-# pip install virtualenv
-# pip3 install virtualenv
+# a) virtualenv way:
+# PIP_REQUIRE_VIRTUALENV="false" pip install virtualenv
+# PIP_REQUIRE_VIRTUALENV="false" pip3 install virtualenv
 # virtualenv -p python <name> # or:
 # virtualenv -p python3 <name>
+# b) pyenv way:
+# pyenv install <python version>
+# pyenv virtualenv <python version> <name>
 brew 'python@2' # 2.7
 brew 'python' # 3
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 # Dev/Ruby
 # https://github.com/rbenv/rbenv#command-reference
