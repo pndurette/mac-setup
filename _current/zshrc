@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # ** Environment variables
 # History
 export SAVEHIST=1000 # Entries to save

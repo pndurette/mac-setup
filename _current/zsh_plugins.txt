@@ -16,7 +16,7 @@ robbyrussell/oh-my-zsh path:plugins/pip
 # also init pyenv-virtualenv if installed,
 # which slows down the shell considerably.
 # https://github.com/pyenv/pyenv-virtualenv/issues/42
-# robbyrussell/oh-my-zsh path:plugins/pyenv
+# robbyrussell/oh-my-zsh path:plugins/pyenv # Too slow!
 
 # Theme!
 bhilburn/powerlevel9k
@@ -24,4 +24,4 @@ bhilburn/powerlevel9k
 
 # Must be at the end:
 # https://github.com/zsh-users/zsh-history-substring-search#usage
-# zsh-users/zsh-history-substring-search
+# zsh-users/zsh-history-substring-search # I don't like it!
