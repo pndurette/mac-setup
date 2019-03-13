@@ -14,20 +14,25 @@ mas 'Monodraw', id: 920404675
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
 mas 'Keynote', id: 409183694
+mas 'WhatsApp', id: 1147396723
+mas 'Parcel', id: 639968404
+# mas 'Affinity Designer', id: 824171161
 
 # Cask macOS apps
+cask 'iterm2'
+cask 'telegram'
 cask 'typora'
 cask 'google-chrome'
 cask 'firefox'
 cask 'authy'
 
 # Make macOS more linux-y
-brew 'findutils', args: ['default-names']
-brew 'gnu-sed', args: ['default-names']
-brew 'gnu-tar', args: ['default-names']
-brew 'gnu-which', args: ['default-names']
-brew 'gnutls', args: ['default-names']
-brew 'grep', args: ['default-names']
+brew 'findutils'
+brew 'gnu-sed'
+brew 'gnu-tar'
+brew 'gnu-which'
+brew 'gnutls'
+brew 'grep'
 brew 'coreutils'
 brew 'binutils'
 brew 'diffutils'
@@ -39,12 +44,18 @@ brew 'nmap'
 brew 'gpg'
 brew 'htop'
 
+# Zsh
+brew 'zsh'
+brew 'getantibody/tap/antibody'
+brew 'caskroom/fonts/font-hack-nerd-font'
+
 # Dev
 brew 'git'
 brew 'jq'
 
 # Dev/Cloud
 brew 'awscli'
+brew 'terraform'
 
 # Dev/Apps
 cask 'visual-studio-code'
@@ -83,3 +94,7 @@ brew 'rbenv'
 
 # Java 8 (JRE)
 cask 'homebrew/cask-versions/java8'
+
+# Misc
+brew 'screenfetch'
+brew 'peco'
