@@ -1,0 +1,27 @@
+# zsh plugins for Antibody
+# https://getantibody.github.io/usage/
+
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
+jimeh/zsh-peco-history
+
+robbyrussell/oh-my-zsh path:plugins/autopep8
+robbyrussell/oh-my-zsh path:plugins/aws
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/pip
+
+/Users/pndurette/repos/zsh-lux kind:zsh
+
+# NB: pyenv plugins (like the one part of omz)
+# also init pyenv-virtualenv if installed,
+# which slows down the shell considerably.
+# https://github.com/pyenv/pyenv-virtualenv/issues/42
+# robbyrussell/oh-my-zsh path:plugins/pyenv
+
+# Theme!
+bhilburn/powerlevel9k
+# denysdovhan/spaceship-prompt
+
+# Must be at the end:
+# https://github.com/zsh-users/zsh-history-substring-search#usage
+# zsh-users/zsh-history-substring-search
