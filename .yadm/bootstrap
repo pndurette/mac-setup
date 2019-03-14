@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+SYSTEM_TYPE=$(uname -s)
+
+#-----------------------------------------
+# * Install Homebrew
+# * Install brew packages
+#   https://yadm.io/docs/bootstrap
+#-----------------------------------------
+
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo ">>> Installing homebrew.."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo ">>> Installing brew packages.."
+    brew bundle --global
+  fi
+
+fi
+
+#-----------------------------------------
+# * Configure iTerm2 (to use ~/.iterm2/)
+#   https://yadm.io/docs/bootstrap
+#-----------------------------------------
+
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+
+  if [ -d "$HOME/.iterm2" ]; then
+    echo ">>> Setting iTerm prefs directory.."
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+  fi
+
+fi
+
+#-----------------------------------------
+# * Configure Visual Studio Code
+#   (settings.json, keybindings.json, snippets/)
+# * Intall Extensions
+#-----------------------------------------
+
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+
+    echo ">>> Setting Visual Studio Code user configs.."
+    VSCODE_USERDIR="$HOME/Library/Application Support/Code/User"
+    ln -sf $HOME/.vscode-conf/settings.json    "$VSCODE_USERDIR/settings.json"
+    ln -sf $HOME/.vscode-conf/keybindings.json "$VSCODE_USERDIR/keybindings.json"
+    ln -sf $HOME/.vscode-conf/snippets/        "$VSCODE_USERDIR/snippets"
+
+fi
+
+# Install extensions
+echo ">>> Installing Visual Studio Code extensions.."
+for ext in $(cat $HOME/.vscode-conf/vscode-extensions.txt); do
+  code --install-extension "$ext"
+done
+
+echo "Done!"
