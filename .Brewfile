@@ -47,7 +47,8 @@ brew 'htop'
 # Zsh
 brew 'zsh'
 brew 'getantibody/tap/antibody'
-brew 'caskroom/fonts/font-hack-nerd-font'
+tap 'caskroom/fonts'
+cask 'font-hack-nerd-font'
 
 # Dev
 brew 'git'
@@ -68,7 +69,7 @@ cask 'vagrant'
 # This might trigger a macOS security alert.
 # Will have to be allowed (in System Preferences)
 # and re-run. Virtualbox adds its network interface.
-cask 'virtualbox'
+# cask 'virtualbox'
 
 # Dev/Python
 # a) virtualenv way:
