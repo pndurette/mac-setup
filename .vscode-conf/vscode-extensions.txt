@@ -1,0 +1,6 @@
+James-Yu.latex-workshop
+mauve.terraform
+ms-python.python
+PeterJausovec.vscode-docker
+redhat.vscode-yaml
+zxh404.vscode-proto3

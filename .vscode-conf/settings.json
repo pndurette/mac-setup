@@ -1,0 +1,6 @@
+{
+  "latex-workshop.docker.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.colorTheme": "Solarized Dark",
+  "window.zoomLevel": 0
+}
