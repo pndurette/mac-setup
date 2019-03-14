@@ -7,7 +7,7 @@ export HISTSIZE=1000 # Size in Bytes
 export HISTFILE=~/.zsh_history
 
 # PATH
-BREW_PREFIX=$(brew --prefix)
+BREW_PREFIX=$(/usr/local/bin/brew --prefix)
 PATHS=(
     # PATHs for gnu brew binaries
     $BREW_PREFIX/opt/coreutils/libexec/gnubin
