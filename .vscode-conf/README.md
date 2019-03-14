@@ -6,9 +6,9 @@ Directory I use to keep the VSCode configs in dotfile reach.
 
 The following symlinks are required (done in `.yadm/bootstrap`):
 ```bash
-ln -s $HOME/.vscode-conf/settings.json    $HOME/Library/Application\ Support/Code/User/settings.json
-ln -s $HOME/.vscode-conf/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
-ln -s $HOME/.vscode-conf/snippets/        $HOME/Library/Application\ Support/Code/User/snippets
+ln -s $HOME/.vscode-conf/settings.json    "$HOME/Library/Application Support/Code/User/settings.json"
+ln -s $HOME/.vscode-conf/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
+ln -s $HOME/.vscode-conf/snippets/        "$HOME/Library/Application Support/Code/User/snippets"
 ```
 
 See:
