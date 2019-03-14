@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 SYSTEM_TYPE=$(uname -s)
+SSH_REPO_URL="git@github.com:pndurette/mac-setup.git"
 
 #-----------------------------------------
 # * Install Homebrew
@@ -59,5 +60,12 @@ echo ">>> Installing Visual Studio Code extensions.."
 for ext in $(cat $HOME/.vscode-conf/vscode-extensions.txt); do
   code --install-extension "$ext"
 done
+
+#-----------------------------------------
+# * Set yadm origin url to ssh
+#-----------------------------------------
+
+echo ">>> Updating the yadm origin to ssh.."
+yadm remote set-url origin "$SSH_REPO_URL"
 
 echo "Done!"
