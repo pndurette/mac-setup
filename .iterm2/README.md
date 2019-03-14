@@ -2,7 +2,7 @@
 
 Custom preferences directory for iTerm2.
 
-Configure iTerm2 to use it (done in `.yadm/boostrap`):
+Configure iTerm2 to use it (done in `.yadm/bootstrap`):
 
 ```bash
 defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"

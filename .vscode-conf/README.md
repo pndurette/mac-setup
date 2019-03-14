@@ -12,8 +12,8 @@ ln -s $HOME/.vscode-conf/snippets/        "$HOME/Library/Application Support/Cod
 ```
 
 See:
-https://code.visualstudio.com/docs/getstarted/settings
-https://pawelgrzybek.com/sync-vscode-settings-and-snippets-via-dotfiles-on-github/
+* https://code.visualstudio.com/docs/getstarted/settings
+* https://pawelgrzybek.com/sync-vscode-settings-and-snippets-via-dotfiles-on-github/
 
 ### Extensions
 
