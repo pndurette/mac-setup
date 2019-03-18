@@ -1,9 +1,12 @@
 #!/usr/bin/env zsh
 
+#-----------------------------------------
 # ** Environment variables
+#-----------------------------------------
+
 # History
-export SAVEHIST=1000 # Entries to save
-export HISTSIZE=1000 # Size in Bytes
+export SAVEHIST=10000 # Entries to save
+export HISTSIZE=10000 # Size in Bytes
 export HISTFILE=~/.zsh_history
 
 # PATH
@@ -32,13 +35,25 @@ export GOPATH="${HOME}/.go"
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-# ** Init completion
-# http://zsh.sourceforge.net/Doc/Release/Functions.html
-# http://zsh.sourceforge.net/Doc/Release/Completion-System.html
-autoload -U compinit
-compinit
+#-----------------------------------------
+# ** Zsh options
+#-----------------------------------------
 
+# http://zsh.sourceforge.net/Doc/Release/Options.html
+setopt AUTO_CD
+# setopt CORRECT_ALL
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt NOTIFY
+setopt CHECK_JOBS
+setopt INTERACTIVE_COMMENTS
+setopt ALWAYS_TO_END
+
+#-----------------------------------------
 # ** Completion styling
+#-----------------------------------------
+
 # https://unix.stackexchange.com/a/214699
 # Do menu-driven completion.
 zstyle ':completion:*' menu select
@@ -57,34 +72,63 @@ zstyle ':completion:*' group-name ''
 # https://blog.callstack.io/supercharge-your-terminal-with-zsh-8b369d689770
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate 
 
-# ** Options
-# http://zsh.sourceforge.net/Doc/Release/Options.html
-setopt AUTO_CD
-# setopt CORRECT_ALL
-setopt APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt NOTIFY
-setopt CHECK_JOBS
-setopt INTERACTIVE_COMMENTS
-setopt ALWAYS_TO_END
-
+#-----------------------------------------
 # ** Pyenv init
+#-----------------------------------------
+
 # This is plain faster than most pyenv plugins..
 eval "$(pyenv init -)"
 
-# ** PowerLevel9k theme config (font)
-# Glyph font ('brew cask install font-hack-nerd-font')
-# Must be set before loading PowerLevel9k
-POWERLEVEL9K_MODE='nerdfont-complete'
-# POWERLEVEL9K_COLOR_SCHEME="light"
+#-----------------------------------------
+# ** Zsh plugins
+#-----------------------------------------
 
-# ** Antibody plugin manager (dynamic loading)
+# 1. Antibody plugin manager init (dynamic loading)
 # https://getantibody.github.io/usage/
 source <(antibody init)
+
+# 2. Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
+antibody bundle pndurette/zsh-lux
+# antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
+
+# 3. Theme: PowerLevel9k
+# 3.1. Font pre-config ('brew cask install font-hack-nerd-font')
+POWERLEVEL9K_MODE='nerdfont-complete'
+# 3.2. Color/theme pre-config
+if macos_is_dark; then
+    POWERLEVEL9K_COLOR_SCHEME="dark"
+    lux iterm dark
+else
+    POWERLEVEL9K_COLOR_SCHEME="light"
+    lux iterm light
+fi
+# 3.3. Load PowerLevel9k
+antibody bundle bhilburn/powerlevel9k
+
+# 4. Load remaining plugins
 antibody bundle < ~/.zsh_plugins.txt
 
+#-----------------------------------------
+# ** Init completion
+#-----------------------------------------
+
+# (After plugins to load their completion functions in the $fpath)
+# http://zsh.sourceforge.net/Doc/Release/Functions.html
+# http://zsh.sourceforge.net/Doc/Release/Completion-System.html
+autoload -U compinit
+compinit
+
+#-----------------------------------------
+# ** Zsh plugins (that require compinit)
+#-----------------------------------------
+
+# In awscli's 'aws_zsh_completer.sh', compinit is assumed
+antibody bundle robbyrussell/oh-my-zsh path:plugins/aws
+
+#-----------------------------------------
 # ** PowerLevel9k theme config
+#-----------------------------------------
+
 # Prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     context
@@ -116,13 +160,19 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='grey50'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$DEFAULT_COLOR
 
-# # ** Key bindings
+#-----------------------------------------
+# ** Key bindings
+#-----------------------------------------
+
 # # Up/down bindings for zsh-history-substring-search plugin
 # # https://github.com/zsh-users/zsh-history-substring-search#usage
 # bindkey '^[[A' history-substring-search-up      # Arrow up
 # bindkey '^[[B' history-substring-search-down    # Arrow down
 
+#-----------------------------------------
 # ** Aliases
+#-----------------------------------------
+
 # Disable autocorrect
 alias mv='nocorrect mv'
 alias cp='nocorrect cp'
@@ -136,11 +186,17 @@ alias grep='grep --colour=auto'
 alias df='df -h'
 alias du='du -h'
 # Apps
-alias typora="open -a typora"
+alias typora='open -a typora'
+# Lux
+alias lumos='lux all light'
+alias nox='lux all dark'
 # Other
-alias r="cd ~/repos"
+alias r='cd ~/repos'
 
-# pyenv virtualenv-init & the penv 
+#-----------------------------------------
+# pyenv virtualenv-init & penv PowerLevel9k segment
+#-----------------------------------------
+
 # PowerLevek9k segment both slow down the shell..
 # Function to enable/disable both when required.
 function pyup() {
