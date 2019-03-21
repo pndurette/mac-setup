@@ -86,6 +86,9 @@ eval "$(pyenv init -)"
 # 1. Antibody plugin manager init (dynamic loading)
 # https://getantibody.github.io/usage/
 source <(antibody init)
+# 1.1. OMZ sets ZSH_CACHE and some of its plugins expect it
+# (set it to Antibody's home which is a cache)
+export ZSH_CACHE_DIR="$(antibody home)"
 
 # 2. Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
 antibody bundle pndurette/zsh-lux
@@ -122,8 +125,8 @@ compinit
 # ** Zsh plugins (that require compinit)
 #-----------------------------------------
 
-# In awscli's 'aws_zsh_completer.sh', compinit is assumed
 antibody bundle robbyrussell/oh-my-zsh path:plugins/aws
+antibody bundle robbyrussell/oh-my-zsh path:plugins/kubectl
 
 #-----------------------------------------
 # ** PowerLevel9k theme config
