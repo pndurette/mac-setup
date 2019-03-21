@@ -125,6 +125,7 @@ compinit
 # ** Zsh plugins (that require compinit)
 #-----------------------------------------
 
+# In awscli's 'aws_zsh_completer.sh', compinit is assumed
 antibody bundle robbyrussell/oh-my-zsh path:plugins/aws
 antibody bundle robbyrussell/oh-my-zsh path:plugins/kubectl
 
