@@ -130,6 +130,16 @@ antibody bundle robbyrussell/oh-my-zsh path:plugins/aws
 antibody bundle robbyrussell/oh-my-zsh path:plugins/kubectl
 
 #-----------------------------------------
+# ** Extra autocomplete & misc. sourcing
+#-----------------------------------------
+
+# azure-cli auto-complete via bash compatibility
+# https://github.com/Azure/azure-cli/issues/1722
+if [ -f "$BREW_PREFIX/etc/bash_completion.d/az" ]; then
+    source $BREW_PREFIX/etc/bash_completion.d/az
+fi
+
+#-----------------------------------------
 # ** PowerLevel9k theme config
 #-----------------------------------------
 
