@@ -16,6 +16,7 @@ mas 'Numbers', id: 409203825
 mas 'Keynote', id: 409183694
 mas 'WhatsApp', id: 1147396723
 mas 'Parcel', id: 639968404
+mas 'Microsoft Remote Desktop 10', id: 1295203466
 # mas 'Affinity Designer', id: 824171161
 
 # Cask macOS apps
@@ -56,20 +57,25 @@ brew 'jq'
 
 # Dev/Cloud
 brew 'awscli'
+cask 'google-cloud-sdk'
+brew 'azure-cli'
 brew 'terraform'
 
 # Dev/Apps
 cask 'visual-studio-code'
 
-# Dev/Docker
+# Dev/Containers
+brew 'kubernetes-cli' # i.e. kubectl
+brew 'kubernetes-helm'
 cask 'docker'
 
-# Dev/Vagrant/VirtualBox
+# Dev/Vagrant/Virtualization
 cask 'vagrant'
-# This might trigger a macOS security alert.
-# Will have to be allowed (in System Preferences)
-# and re-run. Virtualbox adds its network interface.
+# Virtualization will trigger a macOS security alert
+# as they often add their own network interfaces.
+# Will have to be allowed (in System Preferences) and re-run.
 # cask 'virtualbox'
+# cask 'multipass'
 
 # Dev/Python
 # a) virtualenv way:
