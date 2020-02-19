@@ -35,6 +35,15 @@ export GOPATH="${HOME}/.go"
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+# Google Cloud SDK (to force Python 3)
+# https://cloud.google.com/sdk/gcloud/reference/topic/startup
+# 'python3' is a shim created by Pyenv
+if type python3 > /dev/null; then
+    export CLOUDSDK_PYTHON=python3
+   export CLOUDSDK_GSUTIL_PYTHON=python3
+   export CLOUDSDK_BQ_PYTHON=python3
+fi
+
 #-----------------------------------------
 # ** Zsh options
 #-----------------------------------------
@@ -139,6 +148,13 @@ if [ -f "$BREW_PREFIX/etc/bash_completion.d/az" ]; then
     source $BREW_PREFIX/etc/bash_completion.d/az
 fi
 
+# google-cloud-sdk auto-complete from brew cask
+# https://formulae.brew.sh/cask/google-cloud-sdk (caveats)
+if [ -d "$BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/" ]; then
+    source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+    source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+fi
+
 #-----------------------------------------
 # ** PowerLevel9k theme config
 #-----------------------------------------
@@ -201,6 +217,7 @@ alias df='df -h'
 alias du='du -h'
 # Apps
 alias typora='open -a typora'
+alias terraform11="${BREW_PREFIX}/opt/terraform@0.11/bin/terraform"
 # Lux
 alias lumos='lux all light'
 alias nox='lux all dark'
