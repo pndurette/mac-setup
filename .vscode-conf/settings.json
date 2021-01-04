@@ -1,6 +1,20 @@
 {
   "latex-workshop.docker.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
-  "workbench.colorTheme": "Solarized Dark",
-  "window.zoomLevel": 0
+  "workbench.colorTheme": "Solarized Light",
+  "window.zoomLevel": 0,
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
+    "external": true
+  },
+"explorer.confirmDragAndDrop": false,
+"jupyter.sendSelectionToInteractiveWindow": false
 }
