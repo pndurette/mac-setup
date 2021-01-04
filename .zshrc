@@ -29,6 +29,10 @@ PATHS=(
 # NB: 'j' flag: join PATHS by ':'' (see: man zshexpn)
 export PATH=${(j[:])PATHS}:$PATH 
 
+# gpg
+# https://github.com/Homebrew/homebrew-core/issues/14737#issuecomment-309848851
+export GPG_TTY=$(tty)
+
 # Go
 export GOPATH="${HOME}/.go"
 
