@@ -51,6 +51,9 @@ brew 'getantibody/tap/antibody'
 tap 'caskroom/fonts'
 cask 'font-hack-nerd-font'
 
+# macOS utils
+cask 'appcleaner'
+
 # Dev
 brew 'git'
 brew 'jq'
