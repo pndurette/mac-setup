@@ -28,17 +28,6 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-<<<<<<< HEAD
-=======
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads/mbadolato-iTerm2-Color-Schemes-08a728b/schemes</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<true/>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{799, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -85,7 +74,6 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>626 1779 400 129 -270 900 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-<<<<<<< HEAD
 	<string>676 1605 667 477 -270 900 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>93 124 606 469 0 0 1440 900 </string>
@@ -99,29 +87,6 @@
 	<string>455 183 650 502 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>268 200 650 502 0 0 1440 877 </string>
-=======
-	<string>410 379 620 392 0 0 1440 877 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>415 216 609 401 0 0 1024 617 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>453 335 796 486 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>10 364 650 502 0 0 1440 900 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>24 247 1218 597 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 10</key>
-	<string>365 94 650 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 11</key>
-	<string>386 71 650 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 12</key>
-	<string>407 290 650 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>162 43 650 502 0 0 1024 617 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>304 219 650 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>422 182 650 502 0 0 1440 877 </string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>115 329 650 502 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -817,7 +782,6 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-<<<<<<< HEAD
 		<string>3.2.9</string>
 		<string>3.3.0</string>
 	</array>
@@ -827,27 +791,12 @@
 		<string>{{-270, 900}, {2560, 1440}}</string>
 		<key>topLeft</key>
 		<string>{707, 2092}</string>
-=======
-		<string>3.3.2</string>
-		<string>3.2.9</string>
-		<string>3.3.9</string>
-		<string>3.3.12</string>
-		<string>3.3.6</string>
-	</array>
-	<key>NoSyncFrame_SharedPreferences</key>
-	<dict>
-		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
-		<key>topLeft</key>
-		<string>{440, 626}</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-<<<<<<< HEAD
 	<string>C085CF0B-4D7C-41F4-83AE-32D66C4AAC3C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
 	<integer>1</integer>
@@ -857,23 +806,6 @@
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
-=======
-	<string>A6B6B239-2997-4966-B502-2B0AB34F58BA</string>
-	<key>NoSyncLastTipTime</key>
-	<real>563047825.71161199</real>
-	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
-	<key>NoSyncNextAnnoyanceTime</key>
-	<real>588560748.54177105</real>
-	<key>NoSyncOnboardingWindowHasBeenShown</key>
-	<true/>
-	<key>NoSyncPermissionToShowTip</key>
-	<true/>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -1176,11 +1108,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>id</string>
-=======
-				<string>currentTab.currentSession.presentationName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1188,11 +1116,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>style</string>
-=======
-				<string>currentTab.iterm2.localhostName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1200,11 +1124,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.name</string>
-=======
-				<string>style</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1212,11 +1132,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>titleOverrideFormat</string>
-=======
-				<string>frame</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1224,11 +1140,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.presentationName</string>
-=======
-				<string>currentTab.currentSession.pid</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1236,11 +1148,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>frame</string>
-=======
-				<string>currentTab.currentSession.termid</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1248,11 +1156,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.username</string>
-=======
-				<string>currentTab.currentSession.terminalIconName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1268,11 +1172,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>titleOverride</string>
-=======
-				<string>currentTab.currentSession</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1280,11 +1180,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.pid</string>
-=======
-				<string>currentTab.window</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1292,11 +1188,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.jobName</string>
-=======
-				<string>id</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1304,11 +1196,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession</string>
-=======
-				<string>currentTab.currentSession.name</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1316,39 +1204,31 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.tty</string>
-=======
-				<string>titleOverride</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-<<<<<<< HEAD
 				<false/>
 				<key>name</key>
 				<string>iterm2</string>
 				<key>nonterminalContext</key>
 				<integer>4</integer>
-=======
-				<true/>
-				<key>name</key>
-				<string>number</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.iterm2.localhostName</string>
-=======
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.path</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1356,11 +1236,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
-				<string>currentTab.currentSession.path</string>
-=======
 				<string>currentTab.currentSession.commandLine</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1368,19 +1244,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
-				<string>currentTab.currentSession.commandLine</string>
-=======
-				<string>currentTab.currentSession.hostname</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-<<<<<<< HEAD
 				<string>currentTab.currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -1388,43 +1251,19 @@
 		</array>
 		<key>2</key>
 		<array>
-=======
-				<string>currentTab.currentSession.tty</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>tmuxWindowTitle</string>
-=======
-				<string>currentTab.currentSession.username</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-<<<<<<< HEAD
 				<true/>
 				<key>name</key>
 				<string>id</string>
-=======
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverrideFormat</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1432,22 +1271,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>titleOverrideFormat</string>
-=======
-				<string>currentTab.currentSession.jobName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>2</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.commandLine</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1455,11 +1279,7 @@
 				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession</string>
-=======
-				<string>title</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>1</integer>
 			</dict>
@@ -1467,11 +1287,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>titleOverride</string>
-=======
-				<string>title</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1479,11 +1295,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.username</string>
-=======
-				<string>tmuxWindowTitle</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1491,11 +1303,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.hostname</string>
-=======
-				<string>currentSession.presentationName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1503,11 +1311,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.name</string>
-=======
-				<string>iterm2.localhostName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1521,23 +1325,9 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-<<<<<<< HEAD
 				<true/>
 				<key>name</key>
 				<string>currentSession.presentationName</string>
-=======
-				<false/>
-				<key>name</key>
-				<string>window</string>
-				<key>nonterminalContext</key>
-				<integer>16</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.tty</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1545,11 +1335,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.pid</string>
-=======
-				<string>currentSession.jobName</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1557,11 +1343,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.tty</string>
-=======
-				<string>currentSession.name</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1569,11 +1351,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>iterm2.localhostName</string>
-=======
-				<string>window</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1581,47 +1359,23 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.jobName</string>
-=======
-				<string>id</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-<<<<<<< HEAD
 				<false/>
 				<key>name</key>
 				<string>window</string>
 				<key>nonterminalContext</key>
 				<integer>16</integer>
-=======
-				<true/>
-				<key>name</key>
-				<string>titleOverride</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession.commandLine</string>
-=======
-				<string>currentSession.username</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.termid</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1637,11 +1391,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>tmuxWindow</string>
-=======
-				<string>titleOverrideFormat</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1649,19 +1399,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-<<<<<<< HEAD
 				<string>currentSession</string>
-=======
-				<string>currentSession.hostname</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.pid</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1673,33 +1411,6 @@
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
-<<<<<<< HEAD
-=======
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindow</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 		</array>
 		<key>4</key>
 		<array>
@@ -1771,19 +1482,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-<<<<<<< HEAD
 	<string>https://iterm2.com/appcasts/final_new.xml?shard=57</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
 	<date>2019-08-06T14:19:50Z</date>
-=======
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=25</string>
-	<key>SUHasLaunchedBefore</key>
-	<true/>
-	<key>SULastCheckTime</key>
-	<date>2020-08-13T00:32:36Z</date>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -1806,11 +1509,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-<<<<<<< HEAD
 	<string>3.3.0</string>
-=======
-	<string>3.3.12</string>
->>>>>>> 52c33c38437f6fa343babdf4efcfbd6a6254845c
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
