@@ -21,5 +21,11 @@
   },
   "window.zoomLevel": 0,
   "java.semanticHighlighting.enabled": true,
-  "python.languageServer": "Microsoft"
+  "python.languageServer": "Pylance",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.automationShell.linux": "",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  }
 }

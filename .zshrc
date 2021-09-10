@@ -155,8 +155,16 @@ fi
 # google-cloud-sdk auto-complete from brew cask
 # https://formulae.brew.sh/cask/google-cloud-sdk (caveats)
 if [ -d "$BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/" ]; then
+    # export CLOUDSDK_PYTHON=$BREW_PREFIX/opt/python@3.8/libexec/bin/python
     source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
     source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+fi
+
+# terraform auto-complete
+# https://www.terraform.io/docs/commands/index.html#shell-tab-completion
+if [ -f "$BREW_PREFIX/bin/terraform" ]; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C /usr/local/bin/terraform terraform
 fi
 
 #-----------------------------------------
@@ -221,7 +229,6 @@ alias df='df -h'
 alias du='du -h'
 # Apps
 alias typora='open -a typora'
-alias terraform11="${BREW_PREFIX}/opt/terraform@0.11/bin/terraform"
 # Lux
 alias lumos='lux all light'
 alias nox='lux all dark'

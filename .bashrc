@@ -114,3 +114,5 @@ fi
 
 # added by travis gem
 [ -f /Users/pierre.durette/.travis/travis.sh ] && source /Users/pierre.durette/.travis/travis.sh
+
+complete -C /usr/local/bin/terraform terraform
