@@ -1,9 +1,8 @@
 {
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.jediEnabled": false,
-  "workbench.colorTheme": "Solarized Dark",
-  "java.configuration.checkProjectSettingsExclusions": false,
+  "latex-workshop.docker.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.colorTheme": "Solarized Light",
+  "window.zoomLevel": 0,
   "terraform.indexing": {
     "enabled": false,
     "liveIndexing": false,
@@ -14,10 +13,7 @@
     ]
   },
   "terraform.languageServer": {
-    "external": true,
-    "args": [
-      "serve"
-    ]
+    "external": true
   },
   "window.zoomLevel": 0,
   "java.semanticHighlighting.enabled": true,
