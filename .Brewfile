@@ -17,7 +17,9 @@ mas 'Keynote', id: 409183694
 mas 'WhatsApp', id: 1147396723
 mas 'Parcel', id: 639968404
 mas 'Microsoft Remote Desktop 10', id: 1295203466
+mas 'Moom', id: 419330170
 # mas 'Affinity Designer', id: 824171161
+# mas 'Affinity Photo', id: 824183456
 
 # Cask macOS apps
 cask 'iterm2'
@@ -49,7 +51,8 @@ brew 'htop'
 brew 'zsh'
 brew 'getantibody/tap/antibody'
 tap 'caskroom/fonts'
-cask 'font-hack-nerd-font'
+# cask 'font-hack-nerd-font'
+cask 'font-meslo-lg-nerd-font'
 
 # macOS utils
 cask 'appcleaner'
@@ -89,8 +92,7 @@ cask 'vagrant'
 # b) pyenv way:
 # pyenv install <python version>
 # pyenv virtualenv <python version> <name>
-brew 'python@2' # 2.7
-brew 'python' # 3
+brew 'python'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 
@@ -103,7 +105,7 @@ brew 'pyenv-virtualenv'
 brew 'rbenv'
 
 # Java 8 (JRE)
-cask 'homebrew/cask-versions/java8'
+# cask 'homebrew/cask-versions/java8'
 
 # Misc
 brew 'screenfetch'
