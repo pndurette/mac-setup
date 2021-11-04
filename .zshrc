@@ -104,8 +104,9 @@ source <(antibody init)
 export ZSH_CACHE_DIR="$(antibody home)"
 
 # 2. Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
-antibody bundle pndurette/zsh-lux
-# antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
+# antibody bundle pndurette/zsh-lux
+# antibody bundle pndurette/zsh-lux branch:v0.0.1 # specify ref
+antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
 
 # 3. Theme: PowerLevel9k
 # 3.1. Font pre-config ('brew cask install font-hack-nerd-font')
