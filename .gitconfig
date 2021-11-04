@@ -1,8 +1,8 @@
 [user]
 	name = Pierre-Nick Durette
 	email = pndurette@gmail.com
-	signingkey = A380087D5C79C18B
+	# signingkey = A380087D5C79C18B
 [commit]
-	gpgsign = true
+	# gpgsign = true
 [gpg]
-	program = gpg
+	# program = gpg
