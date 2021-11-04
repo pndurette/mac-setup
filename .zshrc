@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #-----------------------------------------
 # ** Environment variables
 #-----------------------------------------
@@ -44,8 +51,8 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # 'python3' is a shim created by Pyenv
 if type python3 > /dev/null; then
     export CLOUDSDK_PYTHON=python3
-   export CLOUDSDK_GSUTIL_PYTHON=python3
-   export CLOUDSDK_BQ_PYTHON=python3
+    export CLOUDSDK_GSUTIL_PYTHON=python3
+    export CLOUDSDK_BQ_PYTHON=python3
 fi
 
 #-----------------------------------------
@@ -104,14 +111,14 @@ source <(antibody init)
 export ZSH_CACHE_DIR="$(antibody home)"
 
 # 2. Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
-# antibody bundle pndurette/zsh-lux
+antibody bundle pndurette/zsh-lux
 # antibody bundle pndurette/zsh-lux branch:v0.0.1 # specify ref
-antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
+# antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
 
 # 3. Theme: PowerLevel9k
 # 3.1. Font pre-config ('brew cask install font-hack-nerd-font')
-POWERLEVEL9K_MODE='nerdfont-complete'
 # 3.2. Color/theme pre-config
+# TODO: color schemes don't seem to exist in PowerLevel10k
 if macos_is_dark; then
     POWERLEVEL9K_COLOR_SCHEME="dark"
     lux iterm dark
@@ -119,8 +126,8 @@ else
     POWERLEVEL9K_COLOR_SCHEME="light"
     lux iterm light
 fi
-# 3.3. Load PowerLevel9k
-antibody bundle bhilburn/powerlevel9k
+# 3.3. Load PowerLevel10k
+antibody bundle romkatv/powerlevel10k
 
 # 4. Load remaining plugins
 antibody bundle < ~/.zsh_plugins.txt
@@ -169,41 +176,6 @@ if [ -f "$BREW_PREFIX/bin/terraform" ]; then
 fi
 
 #-----------------------------------------
-# ** PowerLevel9k theme config
-#-----------------------------------------
-
-# Prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    context
-    dir
-    dir_writable
-    vcs
-)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    status
-    root_indicator
-    background_jobs
-    aws
-    command_execution_time
-    time
-    # pyenv # too slow! see: pyup()/pydown() (below)
-)
-
-# Segment: context
-# (Assume current session is of login user if $HOME ends with $USER)
-if [[ $HOME =~ $USER$ ]]; then DEFAULT_USER=$USER; fi
-
-# Segment: dir_writable
-# NB: $DEFAULT_COLOR depends from $POWERLEVEL9K_COLOR_SCHEME
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=$DEFAULT_COLOR
-
-# Segment: command_execution_time
-# NB: $DEFAULT_COLOR depends from $POWERLEVEL9K_COLOR_SCHEME
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='grey50'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$DEFAULT_COLOR
-
-#-----------------------------------------
 # ** Key bindings
 #-----------------------------------------
 
@@ -237,25 +209,17 @@ alias nox='lux all dark'
 alias r='cd ~/repos'
 
 #-----------------------------------------
-# pyenv virtualenv-init & penv PowerLevel9k segment
+# ** PowerLevel10k theme config
 #-----------------------------------------
 
-# PowerLevek9k segment both slow down the shell..
-# Function to enable/disable both when required.
-function pyup() {
-    eval "$(pyenv virtualenv-init -)"
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=( pyenv )
-}
-function pydown() {
-    # 'Undo' pyenv virtualenv-init -
-    export PYENV_VIRTUALENV_INIT=0
-    unset _pyenv_virtualenv_hook
-    unset precmd_functions
-    # Remove 'pyenv' from PowerLevel9k prompt
-    # 1. Clear last element (pyenv)
-    # 2. Rebuild as array
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS[-1]=( '' )
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( 
-        $(echo $POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS)
-    )
-}
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Prompts
+# (see .p10k.zsh)
+
+# Segment: command_execution_time
+# NB: $DEFAULT_COLOR depends from $POWERLEVEL9K_COLOR_SCHEME
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='grey50'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$DEFAULT_COLOR
