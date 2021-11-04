@@ -62,7 +62,7 @@ brew 'jq'
 brew 'awscli'
 cask 'google-cloud-sdk'
 brew 'azure-cli'
-brew 'terraform'
+brew 'hashicorp/tap/terraform'
 
 # Dev/Apps
 cask 'visual-studio-code'
