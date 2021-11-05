@@ -14,7 +14,6 @@ mas 'Monodraw', id: 920404675
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
 mas 'Keynote', id: 409183694
-mas 'WhatsApp', id: 1147396723
 mas 'Parcel', id: 639968404
 mas 'Microsoft Remote Desktop 10', id: 1295203466
 mas 'Moom', id: 419330170
@@ -25,9 +24,18 @@ mas 'Moom', id: 419330170
 cask 'iterm2'
 cask 'telegram'
 cask 'typora'
-cask 'google-chrome'
+cask 'chromium'
 cask 'firefox'
 cask 'authy'
+cask 'prusaslicer'
+cask 'microsoft-teams'
+cask 'zoom'
+
+# Cask macOS utils
+cask 'appcleaner'
+cask 'balenaetcher'
+cask 'the-unarchiver'
+cask 'geekbench'
 
 # Make macOS more linux-y
 brew 'findutils'
@@ -46,6 +54,7 @@ brew 'wget'
 brew 'nmap'
 brew 'gpg'
 brew 'htop'
+brew 'tree'
 
 # Zsh
 brew 'zsh'
@@ -53,9 +62,6 @@ brew 'getantibody/tap/antibody'
 tap 'caskroom/fonts'
 # cask 'font-hack-nerd-font'
 cask 'font-meslo-lg-nerd-font'
-
-# macOS utils
-cask 'appcleaner'
 
 # Dev
 brew 'git'
