@@ -16,23 +16,23 @@ export SAVEHIST=10000 # Entries to save
 export HISTSIZE=10000 # Size in Bytes
 export HISTFILE=~/.zsh_history
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # PATH
-BREW_PREFIX=$(/usr/local/bin/brew --prefix)
 PATHS=(
     # PATHs for gnu brew binaries
-    $BREW_PREFIX/opt/coreutils/libexec/gnubin
-    $BREW_PREFIX/opt/findutils/libexec/gnubin
-    $BREW_PREFIX/opt/gnu-sed/libexec/gnubin
-    $BREW_PREFIX/opt/gnu-tar/libexec/gnubin
-    $BREW_PREFIX/opt/gnu-which/libexec/gnubin
-    $BREW_PREFIX/opt/grep/libexec/gnubin
-    # PATH for other brew binaries
-    $BREW_PREFIX/bin
-    $BREW_PREFIX/sbin
+    # $HOMEBREW_PREFIX is set by the above eval
+    $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
+    $HOMEBREW_PREFIX/opt/findutils/libexec/gnubin
+    $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin
+    $HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin
+    $HOMEBREW_PREFIX/opt/gnu-which/libexec/gnubin
+    $HOMEBREW_PREFIX/opt/grep/libexec/gnubin
     # PATH for pipsi
     # https://github.com/mitsuhiko/pipsi
     $HOME/.local/bin
-)
+ )
 # NB: 'j' flag: join PATHS by ':'' (see: man zshexpn)
 export PATH=${(j[:])PATHS}:$PATH 
 
@@ -42,18 +42,6 @@ export GPG_TTY=$(tty)
 
 # Go
 export GOPATH="${HOME}/.go"
-
-# Pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Google Cloud SDK (to force Python 3)
-# https://cloud.google.com/sdk/gcloud/reference/topic/startup
-# 'python3' is a shim created by Pyenv
-if type python3 > /dev/null; then
-    export CLOUDSDK_PYTHON=python3
-    export CLOUDSDK_GSUTIL_PYTHON=python3
-    export CLOUDSDK_BQ_PYTHON=python3
-fi
 
 #-----------------------------------------
 # ** Zsh options
@@ -88,53 +76,63 @@ zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format "$fg[red]No matches for:$reset_color %d"
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
+# Disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
 # Enable approximate matches for completion
 # https://blog.callstack.io/supercharge-your-terminal-with-zsh-8b369d689770
-zstyle ':completion:::::' completer _expand _complete _ignored _approximate 
-
-#-----------------------------------------
-# ** Pyenv init
-#-----------------------------------------
-
-# This is plain faster than most pyenv plugins..
-eval "$(pyenv init -)"
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate
 
 #-----------------------------------------
 # ** Zsh plugins
 #-----------------------------------------
 
-# 1. Antibody plugin manager init (dynamic loading)
-# https://getantibody.github.io/usage/
-source <(antibody init)
-# 1.1. OMZ sets ZSH_CACHE and some of its plugins expect it
-# (set it to Antibody's home which is a cache)
-export ZSH_CACHE_DIR="$(antibody home)"
+# Install zgenom (plugin manager)
+# https://github.com/jandamm/zgenom
+if [[ ! -f "${HOME}/.zgenom/zgenom.zsh" ]]; then
+  git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
+fi
 
-# 2. Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
-antibody bundle pndurette/zsh-lux
-# antibody bundle pndurette/zsh-lux branch:v0.0.1 # specify ref
-# antibody bundle /Users/pndurette/repos/zsh-lux kind:zsh # dev
+# Load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
 
-# 3. Theme: PowerLevel9k
-# 3.1. Font pre-config ('brew cask install font-hack-nerd-font')
-# 3.2. Color/theme pre-config
-# TODO: color schemes don't seem to exist in PowerLevel10k
+# Check for plugin and zgenom updates every 7 days
+# This does not increase the startup time.
+zgenom autoupdate
+
+# if the init script doesn't exist
+if ! zgenom saved; then
+    # Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
+    zgenom load pndurette/zsh-lux
+    # zgenom load ~/repos/zsh-lux # dev
+
+    # Theme: PowerLevel10k
+    # https://github.com/romkatv/powerlevel10k
+    # (see 'zgen' install)
+    zgenom load romkatv/powerlevel10k powerlevel10k
+
+    # General plugins
+    zgenom load greymd/docker-zsh-completion
+
+    # Save all to init script
+    zgenom save
+
+    # Compile your zsh files
+    zgenom compile "$HOME/.zshrc"
+fi
+
+# Re-style iTerm to match macOS appearance
 if macos_is_dark; then
-    POWERLEVEL9K_COLOR_SCHEME="dark"
     lux iterm dark
 else
-    POWERLEVEL9K_COLOR_SCHEME="light"
     lux iterm light
 fi
-# 3.3. Load PowerLevel10k
-antibody bundle romkatv/powerlevel10k
-
-# 4. Load remaining plugins
-antibody bundle < ~/.zsh_plugins.txt
 
 #-----------------------------------------
 # ** Init completion
 #-----------------------------------------
+
+# Add Homebrew-installed completions to the $fpath
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # (After plugins to load their completion functions in the $fpath)
 # http://zsh.sourceforge.net/Doc/Release/Functions.html
@@ -146,33 +144,35 @@ compinit
 # ** Zsh plugins (that require compinit)
 #-----------------------------------------
 
-# In awscli's 'aws_zsh_completer.sh', compinit is assumed
-antibody bundle robbyrussell/oh-my-zsh path:plugins/aws
-antibody bundle robbyrussell/oh-my-zsh path:plugins/kubectl
+zgenom load Aloxaf/fzf-tab # Need to be after compinit but before wrap widgets
+zgenom load joshskidmore/zsh-fzf-history-search
+zgenom load zdharma-continuum/fast-syntax-highlighting
+zgenom load zsh-users/zsh-autosuggestions
 
 #-----------------------------------------
 # ** Extra autocomplete & misc. sourcing
 #-----------------------------------------
 
+# Enable bash completion in zsh (az, gcloud, ...)
+autoload -U +X bashcompinit && bashcompinit
+
 # azure-cli auto-complete via bash compatibility
 # https://github.com/Azure/azure-cli/issues/1722
-if [ -f "$BREW_PREFIX/etc/bash_completion.d/az" ]; then
-    source $BREW_PREFIX/etc/bash_completion.d/az
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/az" ]; then
+    source $HOMEBREW_PREFIX/etc/bash_completion.d/az
 fi
 
 # google-cloud-sdk auto-complete from brew cask
 # https://formulae.brew.sh/cask/google-cloud-sdk (caveats)
-if [ -d "$BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/" ]; then
-    # export CLOUDSDK_PYTHON=$BREW_PREFIX/opt/python@3.8/libexec/bin/python
-    source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-    source $BREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+if [ -d "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/" ]; then
+    source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
 
 # terraform auto-complete
 # https://www.terraform.io/docs/commands/index.html#shell-tab-completion
-if [ -f "$BREW_PREFIX/bin/terraform" ]; then
-    autoload -U +X bashcompinit && bashcompinit
-    complete -o nospace -C /usr/local/bin/terraform terraform
+if [ -f "$HOMEBREW_PREFIX/bin/terraform" ]; then
+    # What the output of 'terraform -install-autocomplete' adds to .zshrc
+    complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
 #-----------------------------------------
@@ -195,8 +195,10 @@ alias rm='nocorrect rm'
 alias mkdir='nocorrect mkdir'
 # Colour!
 alias ls='ls --color=auto'
-alias ll='ls --color=auto -lah'
+# alias ll='ls --color=auto -lah'
 alias grep='grep --colour=auto'
+# Exa
+alias ll='exa -l -g -h --icons --all --all --octal-permissions --time-style long-iso'
 # Human readable
 alias df='df -h'
 alias du='du -h'
