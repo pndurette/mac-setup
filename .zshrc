@@ -175,6 +175,11 @@ if [ -f "$HOMEBREW_PREFIX/bin/terraform" ]; then
     complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
+# pyenv
+# https://github.com/pyenv/pyenv#advanced-configuration
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+
 #-----------------------------------------
 # ** Key bindings
 #-----------------------------------------
