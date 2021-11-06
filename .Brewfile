@@ -6,7 +6,8 @@
 # https://github.com/Homebrew/homebrew-bundle
 
 # Command-Line Mac App Store
-# NB: 'brew install mas && mas signin <email>'
+# NB: Sign in the macOS App Store beforehand
+brew 'mas'
 mas '1Password 7', id: 1333542190
 mas 'Slack', id: 803453959
 mas 'Bear', id: 1091189122
@@ -58,9 +59,8 @@ brew 'tree'
 
 # Zsh
 brew 'zsh'
-brew 'getantibody/tap/antibody'
-tap 'caskroom/fonts'
-# cask 'font-hack-nerd-font'
+brew 'antibody'
+tap 'homebrew/cask-fonts'
 cask 'font-meslo-lg-nerd-font'
 
 # Dev
@@ -71,7 +71,13 @@ brew 'jq'
 brew 'awscli'
 cask 'google-cloud-sdk'
 brew 'azure-cli'
+
+# HashiCorp
+tap 'hashicorp/tap'
 brew 'hashicorp/tap/terraform'
+brew 'hashicorp/tap/vault'
+brew 'hashicorp/tap/consul'
+brew 'hashicorp/tap/nomad'
 
 # Dev/Apps
 cask 'visual-studio-code'
@@ -82,7 +88,7 @@ brew 'kubernetes-helm'
 cask 'docker'
 
 # Dev/Vagrant/Virtualization
-cask 'vagrant'
+# cask 'vagrant'
 # Virtualization will trigger a macOS security alert
 # as they often add their own network interfaces.
 # Will have to be allowed (in System Preferences) and re-run.
