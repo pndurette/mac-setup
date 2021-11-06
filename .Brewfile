@@ -52,10 +52,15 @@ brew 'gzip'
 brew 'watch'
 brew 'tmux'
 brew 'wget'
+
+# More utils
 brew 'nmap'
 brew 'gpg'
 brew 'htop'
 brew 'tree'
+brew 'fzf'
+brew 'bat'
+brew 'exa'
 
 # Zsh
 brew 'zsh'
