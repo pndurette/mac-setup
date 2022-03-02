@@ -63,8 +63,10 @@ brew 'bat'
 brew 'exa'
 
 # Zsh
+# TODO: Check if font the one PowerLevel10k expects?
+#   It wants to be installed with 'p10k configure'
+#   see https://github.com/romkatv/powerlevel10k#fonts
 brew 'zsh'
-brew 'antibody'
 tap 'homebrew/cask-fonts'
 cask 'font-meslo-lg-nerd-font'
 
