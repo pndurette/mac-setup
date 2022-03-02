@@ -10,7 +10,7 @@
 brew 'mas'
 mas '1Password 7', id: 1333542190
 mas 'Slack', id: 803453959
-mas 'Telegram', id: 747648890
+# mas 'Telegram', id: 747648890
 mas 'Bear', id: 1091189122
 mas 'Monodraw', id: 920404675
 mas 'Pages', id: 409201541
@@ -28,7 +28,7 @@ cask 'typora'
 cask 'chromium'
 cask 'firefox'
 cask 'authy'
-cask 'prusaslicer'
+# cask 'prusaslicer'
 cask 'microsoft-teams'
 cask 'zoom'
 
