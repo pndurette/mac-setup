@@ -17,6 +17,9 @@
 
 ```bash
 brew install yadm
+# brew might not be in the path yet, in this case:
+# /opt/homebrew/bin/brew install yadm # macOS Apple Silicon
+# /usr/local/bin/brew install yadm    # macOS Intel
 ```
 
 ### Log into the Mac App Store
