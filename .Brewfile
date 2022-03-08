@@ -91,7 +91,7 @@ cask 'visual-studio-code'
 
 # Dev/Containers
 brew 'kubernetes-cli' # i.e. kubectl
-brew 'kubernetes-helm'
+brew 'helm'
 # cask 'docker'
 cask 'rancher'
 
