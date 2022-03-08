@@ -11,15 +11,15 @@
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add brew to the path for this session
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 ### Install `yadm`
 
 ```bash
 brew install yadm
-# brew might not be in the path yet, in this case:
-# /opt/homebrew/bin/brew install yadm # macOS Apple Silicon
-# /usr/local/bin/brew install yadm    # macOS Intel
 ```
 
 ### Log into the Mac App Store
