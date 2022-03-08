@@ -35,5 +35,5 @@
 [includeIf "gitdir:~/repos/perso/"]
 	path = ~/.config/git/conf_perso
 [includeIf "gitdir:~/"]
-	# Special case for yadm/dotfiles
+	# Special case for yadm/dotfiles (i.e. perso)
 	path = ~/.config/git/conf_perso
