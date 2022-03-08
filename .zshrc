@@ -213,7 +213,11 @@ alias typora='open -a typora'
 alias lumos='lux all light'
 alias nox='lux all dark'
 # Other
-alias r='cd ~/repos'
+if [ -d "$HOME/repos/work" ]; then
+    alias r='cd ~/repos/work'
+else
+    alias r='cd ~/repos'
+fi
 
 #-----------------------------------------
 # ** PowerLevel10k theme config

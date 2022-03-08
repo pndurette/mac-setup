@@ -1,8 +1,39 @@
+# Inspirations:
+# https://phrye.com/tools/git-includes/
+# https://dzone.com/articles/how-to-use-gitconfigs-includeif
+# https://medium.com/doing-things-right/platform-specific-gitconfigs-and-the-wonderful-includeif-7376cd44994d
+
+# General includes
+
+[include]
+	# GPG keys path, ignored silently if not exist
+	# TODO: make a git-crypt with keys
+	path = ~/.config/git/gpg
+
+# OS-specific includes
+
+[includeIf "gitdir:/Users"]
+    path = ~/.config/git/os_macos
+[includeIf "gitdir:/home"]
+    path = ~/.config/git/os_linux
+
+# General
+
+[core]
+    editor = vim
+
 [user]
-	name = Pierre-Nick Durette
-	email = pndurette@gmail.com
-	# signingkey = A380087D5C79C18B
-[commit]
-	# gpgsign = true
+	name = Pierre Nicolas Durette
+
 [gpg]
-	# program = gpg
+	program = gpg
+
+# Repo-specific overrides
+
+[includeIf "gitdir:~/repos/work/"]
+	path = ~/.config/git/conf_work
+[includeIf "gitdir:~/repos/perso/"]
+	path = ~/.config/git/conf_perso
+[includeIf "gitdir:~/"]
+	# Special case for yadm/dotfiles
+	path = ~/.config/git/conf_perso
