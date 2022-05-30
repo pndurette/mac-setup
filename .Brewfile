@@ -21,6 +21,7 @@ mas 'Microsoft Remote Desktop 10', id: 1295203466
 mas 'Moom', id: 419330170
 # mas 'Affinity Designer', id: 824171161
 # mas 'Affinity Photo', id: 824183456
+# mas 'Shapr 3D', id: 1091675654
 
 # Cask macOS apps
 cask 'iterm2'
@@ -31,6 +32,7 @@ cask 'authy'
 # cask 'prusaslicer'
 cask 'microsoft-teams'
 cask 'zoom'
+cask 'signal'
 
 # Cask macOS utils
 cask 'appcleaner'

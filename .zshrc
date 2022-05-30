@@ -32,6 +32,8 @@ PATHS=(
     # PATH for pipsi
     # https://github.com/mitsuhiko/pipsi
     $HOME/.local/bin
+    # Docker Desktop (uses Homebrew's old dir)
+    /usr/local/bin
  )
 # NB: 'j' flag: join PATHS by ':'' (see: man zshexpn)
 export PATH=${(j[:])PATHS}:$PATH 

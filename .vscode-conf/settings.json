@@ -1,8 +1,7 @@
 {
   "latex-workshop.docker.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
-  "workbench.colorTheme": "Solarized Light",
-  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Solarized Dark",
   "terraform.indexing": {
     "enabled": false,
     "liveIndexing": false,
@@ -15,7 +14,6 @@
   "terraform.languageServer": {
     "external": true
   },
-  "window.zoomLevel": 0,
   "java.semanticHighlighting.enabled": true,
   "python.languageServer": "Pylance",
   "terminal.integrated.shell.osx": "/bin/zsh",
@@ -24,5 +22,6 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.banner": "always"
 }
