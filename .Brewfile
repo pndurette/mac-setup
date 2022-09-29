@@ -8,7 +8,6 @@
 # Command-Line Mac App Store
 # NB: Sign in the macOS App Store beforehand
 brew 'mas'
-mas '1Password 7', id: 1333542190
 mas 'Slack', id: 803453959
 # mas 'Telegram', id: 747648890
 mas 'Bear', id: 1091189122
@@ -24,6 +23,7 @@ mas 'Moom', id: 419330170
 # mas 'Shapr 3D', id: 1091675654
 
 # Cask macOS apps
+cask '1password'
 cask 'iterm2'
 cask 'typora'
 cask 'chromium'
