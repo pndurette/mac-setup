@@ -214,6 +214,10 @@ alias typora='open -a typora'
 # Lux
 alias lumos='lux all light'
 alias nox='lux all dark'
+# Git
+alias 'gcm'='git checkout main'
+alias 'gpull'='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias 'gpush'='git push origin $(git rev-parse --abbrev-ref HEAD)'
 # Other
 if [ -d "$HOME/repos/work" ]; then
     alias r='cd ~/repos/work'
