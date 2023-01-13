@@ -11,9 +11,6 @@
       "**/.terraform/**/*"
     ]
   },
-  "terraform.languageServer": {
-    "external": true
-  },
   "java.semanticHighlighting.enabled": true,
   "python.languageServer": "Pylance",
   "terminal.integrated.shell.osx": "/bin/zsh",
@@ -23,5 +20,9 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "security.workspace.trust.banner": "always"
+  "security.workspace.trust.banner": "always",
+  "terraform.languageServer.enable": true,
+  "redhat.telemetry.enabled": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false
 }
