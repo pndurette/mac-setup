@@ -105,7 +105,7 @@ zgenom autoupdate
 if ! zgenom saved; then
     # Plugin: zsh-lux. Provides 'macos_is_dark', 'lux'
     zgenom load pndurette/zsh-lux
-    # zgenom load ~/repos/zsh-lux # dev
+    # zgenom load ~/repos/zsh-lux # dev (nb: 'zgenom reset' and re-source during dev)
 
     # Theme: PowerLevel10k
     # https://github.com/romkatv/powerlevel10k
@@ -181,6 +181,10 @@ fi
 # https://github.com/pyenv/pyenv#advanced-configuration
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
+
+# rbenv
+# https://github.com/rbenv/rbenv
+eval "$(rbenv init -)"
 
 #-----------------------------------------
 # ** Key bindings
