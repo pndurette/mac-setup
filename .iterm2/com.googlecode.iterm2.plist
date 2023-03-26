@@ -674,7 +674,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -740,6 +740,8 @@
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>5</integer>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
