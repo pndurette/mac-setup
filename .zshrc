@@ -32,6 +32,10 @@ PATHS=(
     # PATH for pipsi
     # https://github.com/mitsuhiko/pipsi
     $HOME/.local/bin
+    # Java 19
+    # $HOMEBREW_PREFIX/opt/openjdk@19/bin
+    # Java 17
+    $HOMEBREW_PREFIX/opt/openjdk@17/bin
     # Docker Desktop (uses Homebrew's old dir)
     /usr/local/bin
  )
