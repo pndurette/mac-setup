@@ -1,7 +1,7 @@
 {
   "latex-workshop.docker.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "Solarized Light",
   "terraform.indexing": {
     "enabled": false,
     "liveIndexing": false,
@@ -13,16 +13,19 @@
   },
   "java.semanticHighlighting.enabled": true,
   "python.languageServer": "Pylance",
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.automationShell.linux": "",
   "terminal.integrated.fontFamily": "Hack Nerd Font",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.banner": "always",
   "terraform.languageServer.enable": true,
   "redhat.telemetry.enabled": false,
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportShadowedImports": "none",
+    "reportMissingImports": "none"
+  },
+  "explorer.confirmDelete": false,
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }
