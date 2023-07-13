@@ -43,10 +43,10 @@
 	cm = checkout main
 	pull = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	push = !git push origin $(git rev-parse --abbrev-ref HEAD)
-	# Checks out a new branch of the form <ticketkey>-<ticketnumber>_<branchname>
+	# Checks out a new branch of the form <ticketkey>-<ticketnumber>_<some_short_description>
 	# Where <ticketkey> is the value of user.ticketkey in gitconfig and
 	#       <branchname> is an underscore-ified string of the remaining arguments (description)
-	# Usage: git gb <ticketnumber> <>
+	# Usage: git gb <ticketnumber> <some short description>
 	gb = "!f(){ \
 		BRANCH_PREFIX=$(git config user.ticketkey | tr '[:upper:]' '[:lower:]')-$1 && \
 		BRANCH_SUFFIX=$(echo ${@:2} | tr '[:upper:]' '[:lower:]' | tr ' ' '_') && \
