@@ -37,3 +37,18 @@
 [includeIf "gitdir:~/"]
 	# Special case for yadm/dotfiles (i.e. perso)
 	path = ~/.config/git/conf_perso
+
+# Aliases
+[alias]
+	cm = checkout main
+	pull = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+	push = !git push origin $(git rev-parse --abbrev-ref HEAD)
+	# Checks out a new branch of the form <ticketkey>-<ticketnumber>_<branchname>
+	# Where <ticketkey> is the value of user.ticketkey in gitconfig and
+	#       <branchname> is an underscore-ified string of the remaining arguments (description)
+	# Usage: git gb <ticketnumber> <>
+	gb = "!f(){ \
+		BRANCH_PREFIX=$(git config user.ticketkey | tr '[:upper:]' '[:lower:]')-$1 && \
+		BRANCH_SUFFIX=$(echo ${@:2} | tr '[:upper:]' '[:lower:]' | tr ' ' '_') && \
+		git checkout -b ${BRANCH_PREFIX}_${BRANCH_SUFFIX} ; \
+		}; f"

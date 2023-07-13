@@ -226,6 +226,7 @@ alias nox='lux all dark'
 alias 'gcm'='git checkout main'
 alias 'gpull'='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias 'gpush'='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias 'gb'='(){ git gb "$@" ;}'
 # Other
 if [ -d "$HOME/repos/work" ]; then
     alias r='cd ~/repos/work'
