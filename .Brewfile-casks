@@ -19,6 +19,7 @@ cask 'slack'
 cask 'monodraw'
 
 # Cask macOS utils
+cask 'devutils'
 cask 'moom'
 cask 'appcleaner'
 cask 'balenaetcher'
