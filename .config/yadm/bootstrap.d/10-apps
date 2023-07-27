@@ -12,14 +12,14 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   echo ">>> Installing brew packages.."
   brew bundle --file=~/.Brewfile-base
 
-  if [[ -z "${BOOTSTRAP_LOCALAPP}" ]]; then
+  if [[ ! -z "${BOOTSTRAP_LOCALAPP}" ]]; then
     export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
   fi
 
   echo ">>> Install brew casks"
   brew bundle --file=~/.Brewfile-casks
 
-  if [[ -z "${BOOTSTRAP_PERSO}" ]]; then
+  if [[ ! -z "${BOOTSTRAP_PERSO}" ]]; then
     echo ">>> Install brew casks (personal Applications)"
     brew bundle --file=~/.Brewfile-casks-perso
   fi
