@@ -53,9 +53,6 @@ brew 'hashicorp/tap/vault'
 brew 'hashicorp/tap/consul'
 brew 'hashicorp/tap/nomad'
 
-# Dev/Apps
-cask 'visual-studio-code'
-
 # Dev/Containers
 brew 'kubernetes-cli' # i.e. kubectl
 brew 'helm'

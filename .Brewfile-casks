@@ -5,14 +5,6 @@
 # See homebrew-bundle:
 # https://github.com/Homebrew/homebrew-bundle
 
-# Command-Line Mac App Store
-# NB: Sign in the macOS App Store beforehand
-brew 'mas'
-mas 'Slack', id: 803453959
-mas 'Bear', id: 1091189122
-mas 'Monodraw', id: 920404675
-mas 'Moom', id: 419330170
-
 # Cask macOS apps
 cask '1password'
 cask 'iterm2'
@@ -22,8 +14,12 @@ cask 'firefox'
 cask 'authy'
 cask 'microsoft-teams'
 cask 'zoom'
+cask 'visual-studio-code'
+cask 'slack'
+cask 'monodraw'
 
 # Cask macOS utils
+cask 'moom'
 cask 'appcleaner'
 cask 'balenaetcher'
 cask 'the-unarchiver'

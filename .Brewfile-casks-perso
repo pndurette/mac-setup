@@ -8,6 +8,7 @@
 # Command-Line Mac App Store
 # NB: Sign in the macOS App Store beforehand
 brew 'mas'
+mas 'Bear', id: 1091189122
 mas 'Telegram', id: 747648890
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
