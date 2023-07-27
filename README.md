@@ -31,6 +31,8 @@ brew install yadm
 ### Clone and bootstrap
 
 ```bash
+export BOOTSTRAP_LOCALAPPS=1 # To install Applications casks under ~/Applications
+export BOOTSTRAP_PERSO=1     # To install non-work Applications
 yadm clone https://github.com/pndurette/mac-setup.git --bootstrap # https!
 ```
 
