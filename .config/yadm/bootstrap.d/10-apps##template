@@ -16,17 +16,16 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   echo ">>> Installing brew packages.."
   brew bundle --file=~/.Brewfile-base
 
-  {% if yadm.class == "LocalApps" %}
-  mkdir -p ~/Application
+{% if env.BOOTSTRAP_LOCALAPPS == "1" %}
   export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-  {% endif %}
+{% endif %}
 
   echo ">>> Install brew casks"
   brew bundle --file=~/.Brewfile-casks
 
-  {% if yadm.class == "PersoApps" %}
+{% if env.BOOTSTRAP_PERSO == "1" %}
   echo ">>> Install brew casks (personal Applications)"
   brew bundle --file=~/.Brewfile-casks-perso
-  {% endif %}
+{% endif %}
 
 fi
