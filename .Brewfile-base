@@ -5,41 +5,6 @@
 # See homebrew-bundle:
 # https://github.com/Homebrew/homebrew-bundle
 
-# Command-Line Mac App Store
-# NB: Sign in the macOS App Store beforehand
-brew 'mas'
-mas 'Slack', id: 803453959
-# mas 'Telegram', id: 747648890
-mas 'Bear', id: 1091189122
-mas 'Monodraw', id: 920404675
-mas 'Pages', id: 409201541
-mas 'Numbers', id: 409203825
-mas 'Keynote', id: 409183694
-mas 'Parcel', id: 639968404
-mas 'Microsoft Remote Desktop 10', id: 1295203466
-mas 'Moom', id: 419330170
-# mas 'Affinity Designer', id: 824171161
-# mas 'Affinity Photo', id: 824183456
-# mas 'Shapr 3D', id: 1091675654
-
-# Cask macOS apps
-cask '1password'
-cask 'iterm2'
-cask 'typora'
-cask 'chromium'
-cask 'firefox'
-cask 'authy'
-# cask 'prusaslicer'
-cask 'microsoft-teams'
-cask 'zoom'
-cask 'signal'
-
-# Cask macOS utils
-cask 'appcleaner'
-cask 'balenaetcher'
-cask 'the-unarchiver'
-cask 'geekbench'
-
 # Make macOS more linux-y
 brew 'findutils'
 brew 'gnu-sed'
@@ -95,8 +60,7 @@ cask 'visual-studio-code'
 brew 'kubernetes-cli' # i.e. kubectl
 brew 'helm'
 # cask 'docker'
-cask 'rancher'
-
+# cask 'rancher'
 
 # Dev/Vagrant/Virtualization
 # cask 'vagrant'

@@ -1,0 +1,21 @@
+# Based on:
+# https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
+# https://danielmiessler.com/blog/first-10-things-new-mac/
+# https://hackercodex.com/guide/python-development-environment-on-mac-osx/
+# See homebrew-bundle:
+# https://github.com/Homebrew/homebrew-bundle
+
+# Command-Line Mac App Store
+# NB: Sign in the macOS App Store beforehand
+brew 'mas'
+mas 'Telegram', id: 747648890
+mas 'Pages', id: 409201541
+mas 'Numbers', id: 409203825
+mas 'Keynote', id: 409183694
+mas 'Parcel', id: 639968404
+mas 'Affinity Designer', id: 824171161
+mas 'Affinity Photo', id: 824183456
+mas 'Shapr 3D', id: 1091675654
+
+# Cask macOS apps
+cask 'prusaslicer'

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+SYSTEM_TYPE=$(uname -s)
+
+#-----------------------------------------
+# * Install or update Homebrew
+#   https://yadm.io/docs/bootstrap
+#-----------------------------------------
+
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo ">>> Installing homebrew.."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo ">>> Updating homebrew.."
+    # Add brew to the path for this session
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    brew update
+  fi
+
+fi

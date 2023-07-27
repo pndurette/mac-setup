@@ -1,71 +1,29 @@
-#!/usr/bin/env bash
-
-SYSTEM_TYPE=$(uname -s)
-SSH_REPO_URL="git@github.com:pndurette/mac-setup.git"
+#!/bin/bash
 
 #-----------------------------------------
-# * Install Homebrew
-# * Install brew packages
+# * Support bootstrap.d
 #   https://yadm.io/docs/bootstrap
 #-----------------------------------------
 
-if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+# Save this file as ~/.config/yadm/bootstrap and make it executable. It will
+# execute all executable files (excluding templates and editor backups) in the
+# ~/.config/yadm/bootstrap.d directory when run.
 
-  # install homebrew if it's missing
-  if ! command -v brew >/dev/null 2>&1; then
-    echo ">>> Installing homebrew.."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
+set -eu
 
-  if [ -f "$HOME/.Brewfile" ]; then
-    echo ">>> Installing brew packages.."
-    brew bundle --global
-  fi
+# Directory to look for bootstrap executables in
+BOOTSTRAP_D="${BASH_SOURCE[0]}.d"
 
+if [[ ! -d "$BOOTSTRAP_D" ]]; then
+    echo "Error: bootstrap directory '$BOOTSTRAP_D' not found" >&2
+    exit 1
 fi
 
-#-----------------------------------------
-# * Configure iTerm2 (to use ~/.iterm2/)
-#   https://yadm.io/docs/bootstrap
-#-----------------------------------------
-
-if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-
-  if [ -d "$HOME/.iterm2" ]; then
-    echo ">>> Setting iTerm prefs directory.."
-    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
-    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-  fi
-
-fi
-
-#-----------------------------------------
-# * Configure Visual Studio Code
-#   (settings.json, keybindings.json, snippets/)
-# * Intall Extensions
-#-----------------------------------------
-
-if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-
-    echo ">>> Setting Visual Studio Code user configs.."
-    VSCODE_USERDIR="$HOME/Library/Application Support/Code/User"
-    ln -sf $HOME/.vscode-conf/settings.json    "$VSCODE_USERDIR/settings.json"
-    ln -sf $HOME/.vscode-conf/keybindings.json "$VSCODE_USERDIR/keybindings.json"
-    ln -sf $HOME/.vscode-conf/snippets/        "$VSCODE_USERDIR/snippets"
-
-fi
-
-# Install extensions
-echo ">>> Installing Visual Studio Code extensions.."
-for ext in $(cat $HOME/.vscode-conf/vscode-extensions.txt); do
-  code --install-extension "$ext"
+find -L "$BOOTSTRAP_D" -type f | sort | while IFS= read -r bootstrap; do
+    if [[ -x "$bootstrap" && ! "$bootstrap" =~ "##" && ! "$bootstrap" =~ "~$" ]]; then
+        if ! "$bootstrap"; then
+            echo "Error: bootstrap '$bootstrap' failed" >&2
+            exit 1
+        fi
+    fi
 done
-
-#-----------------------------------------
-# * Set yadm origin url to ssh
-#-----------------------------------------
-
-echo ">>> Updating the yadm origin to ssh.."
-yadm remote set-url origin "$SSH_REPO_URL"
-
-echo "Done!"
