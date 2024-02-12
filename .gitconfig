@@ -30,13 +30,11 @@
 
 # Repo-specific overrides
 
+[includeIf "gitdir:~/"]
+	# Perso & yadm/dotfiles (i.e. perso)
+	path = ~/.config/git/conf_perso
 [includeIf "gitdir:~/repos/work/"]
 	path = ~/.config/git/conf_work
-[includeIf "gitdir:~/repos/perso/"]
-	path = ~/.config/git/conf_perso
-[includeIf "gitdir:~/"]
-	# Special case for yadm/dotfiles (i.e. perso)
-	path = ~/.config/git/conf_perso
 
 # Aliases
 [alias]
@@ -52,3 +50,5 @@
 		BRANCH_SUFFIX=$(echo ${@:2} | tr '[:upper:]' '[:lower:]' | tr ' ' '_') && \
 		git checkout -b ${BRANCH_PREFIX}_${BRANCH_SUFFIX} ; \
 		}; f"
+[init]
+	defaultBranch = main

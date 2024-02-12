@@ -1,5 +1,5 @@
 [user]
 	email = pndurette@gmail.com
-	signingkey = <perso keyId>
+	# signingkey = <perso keyId>
 [commit]
 	gpgsign = false
