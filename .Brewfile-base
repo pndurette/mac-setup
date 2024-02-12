@@ -46,15 +46,14 @@ brew 'azure-cli'
 # HashiCorp
 tap 'hashicorp/tap'
 brew 'hashicorp/tap/terraform'
-brew 'hashicorp/tap/vault'
-brew 'hashicorp/tap/consul'
-brew 'hashicorp/tap/nomad'
 
 # Dev/Containers
 brew 'kubernetes-cli' # i.e. kubectl
 brew 'helm'
-# cask 'docker'
-# cask 'rancher'
+# https://github.com/abiosoft/colima
+# https://alexos.dev/2022/01/02/docker-desktop-alternatives-for-m1-mac/
+brew 'colima'
+brew 'docker'
 
 # Dev/Vagrant/Virtualization
 # cask 'vagrant'
