@@ -2,23 +2,8 @@
   "latex-workshop.docker.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.colorTheme": "Solarized Light",
-  "terraform.indexing": {
-    "enabled": false,
-    "liveIndexing": false,
-    "delay": 500,
-    "exclude": [
-      ".terraform/**/*",
-      "**/.terraform/**/*"
-    ]
-  },
-  "java.semanticHighlighting.enabled": true,
   "python.languageServer": "Pylance",
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.automationShell.linux": "",
   "terminal.integrated.fontFamily": "Hack Nerd Font",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.banner": "always",
   "terraform.languageServer.enable": true,
@@ -32,10 +17,11 @@
     "plaintext": false,
     "markdown": false
   },
-  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.editor.enableAutoCompletions": true,
   "editor.inlineSuggest.enabled": true,
   "[python]": {
     "editor.formatOnType": true
   },
-  "git.openRepositoryInParentFolders": "always"
+  "git.openRepositoryInParentFolders": "always",
+  "editor.formatOnSave": true,
 }
