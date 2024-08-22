@@ -18,6 +18,7 @@ export HISTFILE=~/.zsh_history
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export HOMEBREW_NO_AUTO_UPGRADE=1
 
 # PATH
 PATHS=(
@@ -166,12 +167,6 @@ autoload -U +X bashcompinit && bashcompinit
 # https://github.com/Azure/azure-cli/issues/1722
 if [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/az" ]; then
     source $HOMEBREW_PREFIX/etc/bash_completion.d/az
-fi
-
-# google-cloud-sdk auto-complete from brew cask
-# https://formulae.brew.sh/cask/google-cloud-sdk (caveats)
-if [ -d "$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/" ]; then
-    source $HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
 
 # terraform auto-complete
