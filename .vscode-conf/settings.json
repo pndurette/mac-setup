@@ -1,6 +1,4 @@
 {
-  "latex-workshop.docker.enabled": true,
-  "latex-workshop.view.pdf.viewer": "tab",
   "workbench.colorTheme": "Solarized Light",
   "python.languageServer": "Pylance",
   "terminal.integrated.fontFamily": "Hack Nerd Font",
@@ -13,9 +11,9 @@
   "explorer.confirmDragAndDrop": false,
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
     "plaintext": false,
-    "markdown": false
+    "markdown": false,
+    "scminput": false
   },
   "github.copilot.editor.enableAutoCompletions": true,
   "editor.inlineSuggest.enabled": true,
@@ -23,5 +21,5 @@
     "editor.formatOnType": true
   },
   "git.openRepositoryInParentFolders": "always",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": true
 }
