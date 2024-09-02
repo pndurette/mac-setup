@@ -16,6 +16,11 @@ export SAVEHIST=10000 # Entries to save
 export HISTSIZE=10000 # Size in Bytes
 export HISTFILE=~/.zsh_history
 
+# XDG Base Directory Specification
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_CACHE_HOME="$HOME"/.cache
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_AUTO_UPGRADE=1
@@ -39,6 +44,8 @@ PATHS=(
     $HOMEBREW_PREFIX/opt/openjdk@17/bin
     # Docker Desktop (uses Homebrew's old dir)
     /usr/local/bin
+    # Rust Cargo (cargo, rustc, rustup)
+    $XDG_DATA_HOME/cargo/bin
  )
 # NB: 'j' flag: join PATHS by ':'' (see: man zshexpn)
 export PATH=${(j[:])PATHS}:$PATH 
@@ -49,6 +56,10 @@ export GPG_TTY=$(tty)
 
 # Go
 export GOPATH="${HOME}/.go"
+
+# Rust
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 #-----------------------------------------
 # ** Zsh options
@@ -138,8 +149,13 @@ fi
 # ** Init completion
 #-----------------------------------------
 
-# Add Homebrew-installed completions to the $fpath
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# XDG (non-Homebrew) completions dir
+if [ ! -d ${XDG_DATA_HOME}/zsh/site-functions ]; then
+  mkdir -p ${XDG_DATA_HOME}/zsh/site-functions
+fi
+
+# Add Homebrew-installed and XDG completions to the $fpath
+FPATH="$(brew --prefix)/share/zsh/site-functions:${XDG_DATA_HOME}/zsh/site-functions:${FPATH}"
 
 # (After plugins to load their completion functions in the $fpath)
 # http://zsh.sourceforge.net/Doc/Release/Functions.html
@@ -175,6 +191,8 @@ if [ -f "$HOMEBREW_PREFIX/bin/terraform" ]; then
     # What the output of 'terraform -install-autocomplete' adds to .zshrc
     complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
+
+# rustup auto-complete
 
 # pyenv
 # https://github.com/pyenv/pyenv#advanced-configuration
@@ -244,3 +262,16 @@ fi
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='grey50'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$DEFAULT_COLOR
+
+#-----------------------------------------
+# ** zsh-lux config
+#-----------------------------------------
+
+LUX_ALL_LIST=( macos macos_desktop iterm_all vscode )
+
+#-----------------------------------------
+# ** Temp
+#-----------------------------------------
+# Until https://github.com/zsh-users/zsh-autosuggestions/pull/753 is merged
+# (see: https://github.com/romkatv/powerlevel10k/issues/1554)
+unset ZSH_AUTOSUGGEST_USE_ASYNC
